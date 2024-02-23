@@ -1,6 +1,9 @@
 class Persona {
     // Attributo statico.
-    static attributiStatico = 10;
+    static attributoStatico = 10;
+
+    // Attributo standard.
+    attributoStandard = 20;
 
     constructor(nome, cognome) {
         this.nome = nome;
@@ -49,4 +52,7 @@ console.log("Nome persona1 dopo setNome: " + persona1.getNome); // Stampo il cam
 
 console.log(Persona.cammina()); // Utilizzo il metodo "cammina" senza istanziare oggetti.
 
-console.log(Persona.attributiStatico); // Ottengo il numero 10 senza istanziare oggetti.
+console.log(Persona.attributoStatico); // Ottengo il numero 10 senza istanziare oggetti.
+
+console.log(Persona.attributoStandard); // Non ottengo il valore 20 perché l'attributo non è statico. 
+// Bisogna istanziare un oggetto.

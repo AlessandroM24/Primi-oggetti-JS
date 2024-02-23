@@ -4,6 +4,9 @@ class Persona {
 
     // Attributo standard.
     attributoStandard = 20;
+    
+    // Attributo privato. --> Mettere "#" prima del metodo/attributo.
+    #attributoPrivato = 30;
 
     constructor(nome, cognome) {
         this.nome = nome;
@@ -26,6 +29,10 @@ class Persona {
 
     get getCognome() {
         return this.cognome;
+    }
+
+    get getAttributoPrivato() {
+        return this.#attributoPrivato; // Mettere "#".
     }
 
     //SETTERS
@@ -55,4 +62,6 @@ console.log(Persona.cammina()); // Utilizzo il metodo "cammina" senza istanziare
 console.log(Persona.attributoStatico); // Ottengo il numero 10 senza istanziare oggetti.
 
 console.log(Persona.attributoStandard); // Non ottengo il valore 20 perché l'attributo non è statico. 
-// Bisogna istanziare un oggetto.
+// Bisogna istanziare un oggetto. Ottengo "undefined".
+
+console.log(persona1.getAttributoPrivato); // Ottengo il numero 30. Devo usare per forza il getter perché è privato.
